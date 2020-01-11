@@ -47,8 +47,6 @@ class Utils {
         let request = UNNotificationRequest(identifier: quizRequestIdentifier, content: mathContent, trigger: quizTrigger)
 
         UNUserNotificationCenter.current().add(request) { (error) in
-            //11 -
-            print(error as Any)
         }
     }
 }

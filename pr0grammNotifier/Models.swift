@@ -16,3 +16,8 @@ struct Item: Codable {
     let user: String?
     let image: String?
 }
+
+struct UpdateModel: Codable {
+    let req_version: String
+    let features: [String]
+}

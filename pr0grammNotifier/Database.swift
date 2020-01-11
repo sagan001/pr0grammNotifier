@@ -12,7 +12,7 @@ class Database {
         do {
             try db!.execute("DELETE FROM items")
         } catch {
-            print(error)
+            print("delete error",error)
         }
     }
     
@@ -20,7 +20,7 @@ class Database {
         do {
             try db!.execute("CREATE TABLE IF NOT EXISTS items (id integer PRIMARY KEY,image text NOT NULL,user text NOT NULL)")
         } catch {
-            print(error)
+            print("create error", error)
         }
     }
     

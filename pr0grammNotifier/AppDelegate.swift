@@ -4,6 +4,7 @@ import SQLite
 
 let DEFAULT_TAG = "Achtung Scheiße"
 let DEFAULT_REFRESH_RATE = "60"
+let VERSION = "1.0.0"
 
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate, UNUserNotificationCenterDelegate, PreferencesWindowDelegate {
@@ -15,6 +16,7 @@ class AppDelegate: NSObject, NSApplicationDelegate, UNUserNotificationCenterDele
     var preferencesWindow: PerferenceWindow!
     var newestItem : Item? = nil
     var timer: Timer? = nil
+    var updateNotifierWindow : UpdateNotifier!
     
     
     @IBOutlet weak var statusMenu: NSMenu!
@@ -39,6 +41,18 @@ class AppDelegate: NSObject, NSApplicationDelegate, UNUserNotificationCenterDele
         } catch {
             
         }
+    }
+    
+    func checkUpdate() {
+        updateNotifierWindow = UpdateNotifier()
+        var updater = Updater(version:VERSION)
+        updater.checkUpdate(callback:{(version, features) in
+            DispatchQueue.main.async { // Make sure you're on the main thread here
+                self.updateNotifierWindow.showWindow(nil)
+                self.updateNotifierWindow.setData(version: version, features: features)
+            }
+            
+        })
     }
     
     
@@ -70,7 +84,6 @@ class AppDelegate: NSObject, NSApplicationDelegate, UNUserNotificationCenterDele
         preferencesWindow.delegate = self
         
         UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .sound, .badge]) { (permissionGranted, error) in
-            print(error as Any)
         }
 
         let mathQuizCategory = UNNotificationCategory(identifier: "mathQuizCategory", actions: [], intentIdentifiers: [], options: [])
@@ -80,6 +93,8 @@ class AppDelegate: NSObject, NSApplicationDelegate, UNUserNotificationCenterDele
         initFunction()
         
         createTimer()
+        
+        checkUpdate()
     }
     
     func createTimer() {
@@ -104,7 +119,6 @@ class AppDelegate: NSObject, NSApplicationDelegate, UNUserNotificationCenterDele
         
         timer = Timer.scheduledTimer(withTimeInterval: Double(refreshRateInt!), repeats: true) { timer in
             self.getJSON(url:urlstring, database: self.database!, tag:tag)
-            print("Timer :)")
         }
     }
     
@@ -132,7 +146,6 @@ class AppDelegate: NSObject, NSApplicationDelegate, UNUserNotificationCenterDele
                 if (maxItem!.id > maxDBItem) {
                     self.newestItem = maxItem!
                     Utils.notification(title:"Tik-Tok-Notifier", subtitle:"Neues Tik-Tok-Video: " + String(maxItem!.id) + " von " + maxItem!.user!, tag:"Tag: " + tag)
-                    print("new element found!")
                 }
                 
                 for it in itemsFeed.items {
