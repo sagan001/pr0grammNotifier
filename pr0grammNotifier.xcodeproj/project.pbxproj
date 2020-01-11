@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0525AB3623CA775200C16A31 /* update.json in Resources */ = {isa = PBXBuildFile; fileRef = 0525AB3523CA775200C16A31 /* update.json */; };
 		054DAE0E23C2982D00BB8410 /* PerferenceWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 054DAE0C23C2982D00BB8410 /* PerferenceWindow.swift */; };
 		054DAE0F23C2982D00BB8410 /* PerferenceWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 054DAE0D23C2982D00BB8410 /* PerferenceWindow.xib */; };
 		0587D76623C914E700E84516 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0587D76523C914E700E84516 /* Utils.swift */; };
@@ -88,6 +89,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		0525AB3523CA775200C16A31 /* update.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = update.json; sourceTree = "<group>"; };
 		054DAE0C23C2982D00BB8410 /* PerferenceWindow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PerferenceWindow.swift; sourceTree = "<group>"; };
 		054DAE0D23C2982D00BB8410 /* PerferenceWindow.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PerferenceWindow.xib; sourceTree = "<group>"; };
 		0587D76523C914E700E84516 /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
@@ -156,6 +158,7 @@
 				05C41D0923C3930A0091CF4F /* pr0gramm-favicon.icns */,
 				05A99E0E23C1792600DAE62F /* pr0grammNotifier.entitlements */,
 				0587D76523C914E700E84516 /* Utils.swift */,
+				0525AB3523CA775200C16A31 /* update.json */,
 			);
 			path = pr0grammNotifier;
 			sourceTree = "<group>";
@@ -294,6 +297,7 @@
 				05A99E0923C1792600DAE62F /* Assets.xcassets in Resources */,
 				05C41D0A23C3930A0091CF4F /* pr0gramm-favicon.icns in Resources */,
 				05A99E0C23C1792600DAE62F /* MainMenu.xib in Resources */,
+				0525AB3623CA775200C16A31 /* update.json in Resources */,
 				054DAE0F23C2982D00BB8410 /* PerferenceWindow.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
