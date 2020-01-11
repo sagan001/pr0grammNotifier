@@ -45,7 +45,7 @@ class AppDelegate: NSObject, NSApplicationDelegate, UNUserNotificationCenterDele
     
     func checkUpdate() {
         updateNotifierWindow = UpdateNotifier()
-        var updater = Updater(version:VERSION)
+        let updater = Updater(version:VERSION)
         updater.checkUpdate(callback:{(version, features) in
             DispatchQueue.main.async { // Make sure you're on the main thread here
                 self.updateNotifierWindow.showWindow(nil)
