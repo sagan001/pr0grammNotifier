@@ -145,7 +145,7 @@ class AppDelegate: NSObject, NSApplicationDelegate, UNUserNotificationCenterDele
                 
                 if (maxItem!.id > maxDBItem) {
                     self.newestItem = maxItem!
-                    Utils.notification(title:"Tik-Tok-Notifier", subtitle:"Neues Tik-Tok-Video: " + String(maxItem!.id) + " von " + maxItem!.user!, tag:"Tag: " + tag)
+                    Utils.notification(title:"pr0grammNotifier", subtitle:"New Post : " + String(maxItem!.id) + " from " + maxItem!.user!, tag:"Tag: " + tag)
                 }
                 
                 for it in itemsFeed.items {

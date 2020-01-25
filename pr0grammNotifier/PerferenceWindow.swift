@@ -4,11 +4,14 @@ protocol PreferencesWindowDelegate {
     func preferencesDidUpdate()
 }
 
-class PerferenceWindow: NSWindowController, NSWindowDelegate {
+class PerferenceWindow: NSWindowController, NSWindowDelegate, NSTableViewDataSource {
     var delegate: PreferencesWindowDelegate?
     var db: Database? = nil
+    
     @IBOutlet weak var refreshRateTextField: NSTextField!
     @IBOutlet weak var tagTextField: NSTextField!
+    @IBOutlet weak var tableTags: NSTableView!
+    
     
     override var windowNibName : String! {
         return "PerferenceWindow"
@@ -25,6 +28,7 @@ class PerferenceWindow: NSWindowController, NSWindowDelegate {
         refreshRateTextField.stringValue = refresh
         NSApp.activate(ignoringOtherApps: true)
     }
+    
     
     func dialogOKCancel(question: String, text: String) {
         let alert = NSAlert()
@@ -56,7 +60,6 @@ class PerferenceWindow: NSWindowController, NSWindowDelegate {
         tagTextField.stringValue = tag
         refreshRateTextField.stringValue = refresh
         refreshRateTextField.formatter = onlyIntFormatter
-        
     }
     
     
