@@ -1,4 +1,4 @@
-# pr0grammnotifier
+# pr0grammNotifier
 This is a tool to get notifications for new posts posted in the german imageboard [pr0gramm](https://pr0gramm.com). You can select a tag you want to be notified for, when a new image with this tag gets posted, you will be notified.
 
 # Installation
