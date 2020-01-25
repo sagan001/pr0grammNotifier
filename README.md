@@ -1,10 +1,15 @@
 # pr0grammnotifier
-This is a tool to get notifications for new posts posted in the german imageboard [pr0gramm](https://pr0gramm.com). 
+This is a tool to get notifications for new posts posted in the german imageboard [pr0gramm](https://pr0gramm.com). You can select a tag you want to be notified for, when a new image with this tag gets posted, you will be notified.
 
 # Installation
-Download the package from [here](https://github.com/sagan001/pr0grammNotifier/releases). Move the file to your Applications Folder and then start it from your Launcher.
+Download the latest package from [here](https://github.com/sagan001/pr0grammNotifier/releases). Move the file to your Applications Folder and then start it from your Launcher.
 
 # Screenshots
+## Customization
+![Settings](https://raw.githubusercontent.com/sagan001/pr0grammNotifier/master/images/preferences.png)
+
+## Example Notification
+![Notification](https://raw.githubusercontent.com/sagan001/pr0grammNotifier/master/images/notification.png)
 
 
 # Usage
