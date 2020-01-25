@@ -4,7 +4,7 @@ import SQLite
 
 let DEFAULT_TAG = "Achtung Scheiße"
 let DEFAULT_REFRESH_RATE = "60"
-let VERSION = "1.0.0"
+let VERSION = "1.1.0"
 
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate, UNUserNotificationCenterDelegate, PreferencesWindowDelegate {

@@ -1,4 +1,4 @@
 {
-    "req_version":"1.0.0",
-    "features": ["Neue Update Funktionalität!", "Auswählen von eigenen Tags", "Verändern der Aktualisierungsgeschwindigkeit"]
+    "req_version":"1.1.0",
+    "features": ["Fixed translation"]
 }
